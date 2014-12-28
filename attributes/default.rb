@@ -19,3 +19,7 @@ default.haproxy.defaults_options << 'http-server-close'
 default.haproxy.global_options['tune.ssl.default-dh-param'] = 2048
 
 default.haproxy.enable_default_http = false
+
+# If you want to access the administration user interface on the box's external
+# network interface, bind it to *any* interface.
+default.haproxy.admin.address_bind = '0.0.0.0'
