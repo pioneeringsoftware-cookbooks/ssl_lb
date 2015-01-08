@@ -63,7 +63,7 @@ backend_servers = backend_nodes.map do |backend_node|
     maxconn #{node['haproxy']['member_max_connections']}
     check
   ].join(' ')
-end
+end.uniq
 backend_params = [
   'redirect scheme https if !{ ssl_fc }',
 ]
